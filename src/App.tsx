@@ -1,37 +1,55 @@
 import './styles/theme.css';
 import './styles/global.css';
 import { Container } from './components/Container';
-import { Heading } from './components/index.tsx';
+import { Logo } from './components/Logo';
+import { Menu } from './components/Menu';
+import { CountDown } from './components/CountDown';
+import { DefaultInput } from './components/Defaultinput';
 
 export function App() {
   return (
     <>
     <Container>
-        <Heading>Testando meu componente</Heading>
+        <Logo/>
     </Container>
-      <div className='container'>
-        <div className='content'>
-          <section>LOGO</section>
-        </div>
-      </div>
 
-      <div className='container'>
-        <div className='content'>
-          <section>MENU</section>
-        </div>
-      </div>
+     <Container>
+        <Menu/>
+    </Container>
 
-      <div className='container'>
-        <div className='content'>
-          <section>FORM</section>
-        </div>
-      </div>
+    <Container>
+      <CountDown/>
+    </Container>
 
-      <div className='container'>
-        <div className='content'>
-          <section>FOOTER</section>
+    
+    <Container>
+      <form className='form' action="">
+        <div className='formRow'></div>
+          <DefaultInput 
+          labelText='task'
+          id='meuInput'
+          type='text'
+          placeholder='Digite algo'
+          />
+        <div/>
+
+        <div className='formRow'></div>
+          <p>
+            Lorem ipsum dolor sit
+          </p>
+        <div/>
+
+        <div className='formRow'></div>
+          <p>Ciclos</p>
+          <p>0 0 0 0 0 0 0</p>
+        <div/>
+
+        <div className='formRow'>
+          <button>Enviar</button>
         </div>
-      </div>
+
+      </form>
+    </Container>
     </>
   );
 }
